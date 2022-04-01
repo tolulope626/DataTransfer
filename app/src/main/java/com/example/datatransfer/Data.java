@@ -44,6 +44,8 @@ public class Data extends AppCompatActivity {
     private boolean isSame;
     private String sFname, sLname, sAge, sWeight, sHeight;
     private FBDBHelper fbdbHelper;
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,11 +79,16 @@ public class Data extends AppCompatActivity {
                 StringBuilder display = new StringBuilder();
 
                 if (punches != null){
+
                     for (int i = 0; i < count; i++) {
                         display.append(punches.get(i).toString(i+1, res.getString(R.string.date_format), res.getString(R.string.number_format)));
-                    }
 
+                    }
                     txtPunchData.setText(String.valueOf(display));
+                }
+                else{
+                    txtPunchData.setText("No punch recorded");
+                    txtForcePunchResult.setText("No punch recorded");
                 }
             });
         }
@@ -109,6 +116,7 @@ public class Data extends AppCompatActivity {
         fbdbHelper.getPunch(key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                double max = 0;
                 for(DataSnapshot data : snapshot.getChildren()){
                     PunchModel punch = data.getValue(PunchModel.class);
                     if(punch != null){
@@ -117,14 +125,18 @@ public class Data extends AppCompatActivity {
                             key = data.getKey().toString();
                             punchKeys.add(key);
                             punches.add(punch);
+                            //max = punches.get(0).getForce();
+                            if(punches.get(count).getForce() > max ){
+                                max = punches.get(count).getForce();
+                            }
                             count++;
-
                         }
                     }
                     else{
                         Toast.makeText(getApplicationContext(), "Wrong USER", Toast.LENGTH_SHORT).show();
                     }
                 }
+                txtForcePunchResult.setText(df.format(max));
             }
 
             @Override

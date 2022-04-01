@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "718579952221",
+    "firebase_url": "https://force-of-a-punch-project-default-rtdb.firebaseio.com",
+    "project_id": "force-of-a-punch-project",
+    "storage_bucket": "force-of-a-punch-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718579952221:android:bf7ee505f369350b6bbbb4",
+        "android_client_info": {
+          "package_name": "com.example.datatransfer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718579952221-g4sm9eg6n8680b95s2v8boduqjibtk1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVHZuaH9_9hqfxHb6skRw2IEf9eXLwt5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718579952221-g4sm9eg6n8680b95s2v8boduqjibtk1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718579952221:android:d46ac910b6559c126bbbb4",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718579952221-g4sm9eg6n8680b95s2v8boduqjibtk1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVHZuaH9_9hqfxHb6skRw2IEf9eXLwt5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718579952221-g4sm9eg6n8680b95s2v8boduqjibtk1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
